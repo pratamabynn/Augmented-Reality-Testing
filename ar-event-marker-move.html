@@ -1,0 +1,68 @@
+<!doctype HTML>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <!-- Correcting zooming issue -->
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <!-- Library untuk VR membangun 3D -->
+    <script src="./js/aframe/aframe.min.js"></script>
+    <!-- Library untuk AR yang melakukan pengenalan marker dan menyematkan kamera-->
+    <script src="./js/arjs/aframe-ar.js"></script>
+    <title>WebAR: Marker Move Object</title>
+    <script>
+        // https://aframe.io/docs/1.0.0/introduction/writing-a-component.html
+        AFRAME.registerComponent("move", {
+            tick: function() {
+                let obj3d = this.el.sceneEl.querySelector("a-marker");
+                // console.log(obj3d);
+                this.el.object3D.setRotationFromQuaternion(obj3d.object3D.quaternion);
+                this.el.object3D.position.set(obj3d.object3D.position.x, obj3d.object3D.position.y, obj3d.object3D.position.z);
+            }
+        });
+    </script>
+</head>
+
+<body style="margin : 0px; overflow: hidden;">
+    <a-scene embedded vr-mode-ui="enabled: false" arjs="debugUIEnabled: false;">
+
+        <!-- handle hiro marker -->
+        <a-marker preset="hiro">
+            <a-sphere color="red" material="opacity: 0.5; color: blue;" radius="0.5"></a-sphere>
+        </a-marker>
+
+        <a-box move color="red" material="opacity: 0.5; color: red;"></a-box>
+
+        <!-- add a simple camera -->
+        <a-entity camera></a-entity>
+
+    </a-scene>
+    <script>
+        // DON'T USE THIS, USE AFRAME.RegisterComponent instead
+        /*
+        // a-marker
+        let m = document.querySelector("a-marker");
+
+        // a-box
+        let box = document.querySelector("a-box");
+
+        function updateTransformation(obj3d, ent) {
+            console.log(obj3d.position);
+            console.log(obj3d.quaternion);
+            ent.object3D.setRotationFromQuaternion(obj3d.quaternion);
+            ent.object3D.position.set(obj3d.position.x, obj3d.position.y, obj3d.position.z);
+        }
+
+        m.addEventListener("markerFound", (e) => {
+            // should be using tick in registercomponent
+            setTimeout(updateTransformation(m.object3D, box), 2);
+        });
+
+        m.addEventListener("markerLost", (e) => {
+            setTimeout(updateTransformation(m.object3D, box), 2);
+        });
+        */
+    </script>
+</body>
+
+</html>

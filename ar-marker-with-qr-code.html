@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <title>WebAR: Marker with QR Code</title>
+    <script src="./js/aframe/aframe.min.js"></script>
+    <script src="./js/arjs/aframe-ar.js"></script>
+    <!-- include text geometry -->
+    <script src="https://unpkg.com/aframe-text-geometry-component@0.5.1/dist/aframe-text-geometry-component.min.js">
+    </script>
+</head>
+
+<body style="margin : 0px; overflow: hidden;">
+    <a-scene embedded vr-mode-ui="enabled: false" arjs="detectionMode: mono_and_matrix; matrixCodeType: 3x3; debugUIEnabled: true;">
+
+        <!-- handle custom marker, ganti dengan pattern QR Code -->
+        <a-marker-camera type="pattern" url="./marker/unila-bw/ar-marker-unila.patt"></a-marker-camera>
+        <a-box position="0 0.5 0" material="color:blue;"></a-box>
+        </a-marker>
+
+        <!-- add a simple camera -->
+        <a-entity camera></a-entity>
+
+    </a-scene>
+    <ul>
+        <li><a target="_blank" href="https://medium.com/chialab-open-source/how-to-deliver-ar-on-the-web-only-with-a-qr-code-e24b7b61f8cb">How to deliver AR on the web only with a QR Code</a></li>
+        <li><a target="_blank" href="https://www.qrcode-monkey.com/">QRCODEMONKEY: The 100% Free QR Code Generator</a></li>
+        <li><a target="_blank" href="http://au.gmented.com/app/marker/marker.php">Marker generator</a></li>
+        <li><a target="_blank" href="http://www.ucreative.com/articles/what-is-a-qr-code-and-how-does-it-work/">What Is A QR Code And How Does It Work? </a></li>
+    </ul>
+
+</body>
+
+</html>

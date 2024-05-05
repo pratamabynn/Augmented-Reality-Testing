@@ -1,0 +1,28 @@
+<!doctype HTML>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <!-- Correcting zooming issue -->
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <!-- Library untuk VR membangun 3D -->
+    <script src="./js/aframe/aframe.min.js"></script>
+    <!-- Library untuk AR yang melakukan pengenalan marker dan menyematkan kamera-->
+    <script src="./js/arjs/aframe-ar.js"></script>
+    <title>WebAR: Load Model GLTF</title>
+</head>
+
+<body style="margin : 0px; overflow: hidden;">
+    <a-scene embedded vr-mode-ui="enabled: false" arjs="debugUIEnabled: false;">
+
+        <a-marker>
+            <a-gltf-model src="./assets/cat/scene.gltf" rotation="-90 0 0" position="0 0.5 0" scale="0.3 0.3 0.3"></a-gltf-model>
+            
+            <a-plane width=1 height=1 depth=0 rotation="-90 0 0" material="color: white;"></a-box>
+        </a-marker>
+
+        <a-entity camera></a-entity>
+    </a-scene>
+</body>
+
+</html>

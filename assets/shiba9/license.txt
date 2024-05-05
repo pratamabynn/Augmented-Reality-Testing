@@ -1,0 +1,11 @@
+Model Information:
+* title:	shiba komainu [ShibaTexturingChallenge]
+* source:	https://sketchfab.com/3d-models/shiba-komainu-shibatexturingchallenge-5f1fac63b0e34f4ba8f82f4b2774979b
+* author:	reb_blue0712 (https://sketchfab.com/re.blue0712)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "shiba komainu [ShibaTexturingChallenge]" (https://sketchfab.com/3d-models/shiba-komainu-shibatexturingchallenge-5f1fac63b0e34f4ba8f82f4b2774979b) by reb_blue0712 (https://sketchfab.com/re.blue0712) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

@@ -1,0 +1,104 @@
+<!doctype HTML>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <!-- Correcting zooming issue -->
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <title>WebAR: Image Tracking (NFT) lokal</title>
+    <!-- Library untuk VR membangun 3D -->
+    <script src="./js/aframe/aframe.min.js"></script>
+    <!-- Library untuk AR yang melakukan pengenalan NFT dan menyematkan kamera-->
+    <script src="./js/arjs/aframe-ar-nft.js"></script>
+    <style>
+        /* Mengatur posisi elemen pada halaman */
+        
+        #UI {
+            position: fixed;
+            top: 1rem;
+            left: 1rem;
+            right: 1rem;
+        }
+        /* Styling */
+        
+        #UI {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.5em;
+            font-weight: 200;
+            text-align: center;
+            color: orange;
+            background-color: blue;
+            display: block;
+        }
+        
+        .found {
+            color: red;
+            background-color: green;
+        }
+        
+        .lost {
+            color: green;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body style="margin : 0px; overflow: hidden;">
+    <div id="UI">Marker information here.</div>
+    <!-- embedded vr-mode-ui="enabled: false" adalah untuk menonaktifkan tombol VR (stereocospic view) -->
+    <!-- debugUIEnabled: false adalah untuk menonaktifkan UI untuk debugging (true hanya untuk troubleshooting) -->
+    <a-scene vr-mode-ui="enabled: false;" renderer="logarithmicDepthBuffer: true;" embedded
+        arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
+
+        <!-- camera -->
+        <!-- camera: berguna untuk meletakkan layer dunia nyata yang ditangkap menggunakan kamera -->
+        <a-entity camera></a-entity>
+
+        <!-- we use cors proxy to avoid cross-origin problems -->
+        <a-nft type="nft" url="https://meizano.github.io/AR/marker/kio/Kio" smooth="true" smoothCount="10"
+            smoothTolerance=".01" smoothThreshold="5">
+            <a-sphere color="red" material="opacity: 0.5; color: blue;" radius="0.5"></a-sphere>
+        </a-nft>
+
+    </a-scene>
+    <script>
+        let ui = document.querySelector("#UI");
+
+        // Function to display information
+        function markerInfo(marker, evt, infoui) {
+            let posx = marker.object3D.position.x;
+            let posy = marker.object3D.position.y;
+            let posz = marker.object3D.position.z;
+
+            let message = "marker at x: " + marker.object3D.position.x + ", y: " + marker.object3D.position.x +
+                ", z: " + marker.object3D.position.z;
+
+
+            if (evt) {
+                infoui.classList.remove("lost");
+                infoui.classList.add("found");
+                message = "Found " + message;
+            } else {
+                infoui.classList.remove("found");
+                infoui.classList.add("lost");
+                message = "Lost " + message;
+            }
+
+            infoui.innerHTML = message;
+        }
+
+        // Detecting single marker
+        let m = document.querySelector("a-nft");
+
+        m.addEventListener("markerFound", (e) => {
+            markerInfo(m, true, ui);
+        });
+
+        m.addEventListener("markerLost", (e) => {
+            markerInfo(m, false, ui);
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+Model Information:
+* title:	Texture Challenge Shiba Inu
+* source:	https://sketchfab.com/3d-models/texture-challenge-shiba-inu-41b4a99df847460ca4bd6e7f06500113
+* author:	angieb1970 (https://sketchfab.com/angieb1970)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Texture Challenge Shiba Inu" (https://sketchfab.com/3d-models/texture-challenge-shiba-inu-41b4a99df847460ca4bd6e7f06500113) by angieb1970 (https://sketchfab.com/angieb1970) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

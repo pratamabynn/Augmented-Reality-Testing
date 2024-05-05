@@ -1,0 +1,31 @@
+<!doctype HTML>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <!-- Correcting zooming issue -->
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <!-- Library untuk VR membangun 3D -->
+    <script src="./js/aframe/aframe.min.js"></script>
+    <!-- Library untuk AR yang melakukan pengenalan marker dan menyematkan kamera-->
+    <script src="./js/arjs/aframe-ar.js"></script>
+    <title>WebAR: a-videosphere</title>
+</head>
+
+<body style="margin : 0px; overflow: hidden;">
+    <a-scene embedded arjs>
+        <a-assets>
+            <video id="doi-suthep-360.mp4" autoplay loop="true" src="./videos/doi-suthep-360.mp4"> </video>
+        </a-assets>
+
+        <!-- Using the asset management system. -->
+        <a-videosphere src="#doi-suthep-360.mp4"></a-videosphere>
+
+        <a-anchor>
+            <a-icosahedron scale="0.3 0.3 0.3" animation="property: rotation; to: 360 360 360; loop: true; dur: 10000; easing: linear; "></a-icosahedron>
+        </a-anchor>
+        <a-entity camera></a-entity>
+    </a-scene>
+</body>
+
+</html>

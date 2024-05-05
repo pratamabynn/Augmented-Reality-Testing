@@ -1,0 +1,11 @@
+Model Information:
+* title:	Bodyguard Shiba
+* source:	https://sketchfab.com/3d-models/bodyguard-shiba-7ebaaf4347034c35a7a5aa83919c2ca3
+* author:	Peixe do Blender (https://sketchfab.com/PeixedoBlender)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Bodyguard Shiba" (https://sketchfab.com/3d-models/bodyguard-shiba-7ebaaf4347034c35a7a5aa83919c2ca3) by Peixe do Blender (https://sketchfab.com/PeixedoBlender) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
