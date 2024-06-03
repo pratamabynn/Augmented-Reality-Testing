@@ -1,0 +1,137 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-face-aframe.prod.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+	const list = ["shiba1", "shiba2", "shiba3", "shiba4", "shiba5", "shiba6", "shiba7", "shiba8", "shiba9", "shiba10"];
+	const visibles = [false, false, false, false, false, false, false, false, false, false];
+	const setVisible = (button, entities, visible) => {
+	  if (visible) {
+	    button.classList.add("selected");
+	  } else {
+	    button.classList.remove("selected");
+	  }
+	  entities.forEach((entity) => {
+	    entity.setAttribute("visible", visible);
+	  });
+	}
+	list.forEach((item, index) => {
+	  const button = document.querySelector("#" + item);
+	  const entities = document.querySelectorAll("." + item + "-entity");
+	  setVisible(button, entities, visibles[index]);
+	  button.addEventListener('click', () => {
+	    visibles[index] = !visibles[index];
+	    setVisible(button, entities, visibles[index]);
+	  });
+	});
+      })
+    </script>
+    <style>
+      body {
+        margin: 0;
+      }
+      .example-container {
+        overflow: hidden;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+      .options-panel {
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 2;
+      }
+      .options-panel img {
+	border: solid 2px;
+	width: 50px;
+	height: 50px;
+	object-fit: cover;
+	cursor: pointer;
+      }
+      .options-panel img.selected {
+	border-color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="example-container">
+      <div class="options-panel">
+	<!-- <img id="hat1" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.5/examples/face-tracking/assets/hat/thumbnail.png"/>
+	<img id="hat2" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.5/examples/face-tracking/assets/hat2/thumbnail.png"/>
+	<img id="glasses1" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.5/examples/face-tracking/assets/glasses/thumbnail.png"/>
+	<img id="glasses2" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.5/examples/face-tracking/assets/glasses2/thumbnail.png"/>
+	<img id="earring" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.5/examples/face-tracking/assets/earring/thumbnail.png"/> -->
+
+  <img id="shiba1" src="./assets/shibainu1.png"/>
+  <img id="shiba2" src="./assets/shibainu2.png"/>
+  <img id="shiba3" src="./assets/shibainu3.png"/>
+  <img id="shiba4" src="./assets/shibainu4.png"/>
+  <img id="shiba5" src="./assets/shibainu5.png"/>
+  <img id="shiba6" src="./assets/shibainu6.png"/>
+  <img id="shiba7" src="./assets/shibainu7.png"/>
+  <img id="shiba8" src="./assets/shibainu8.png"/>
+  <img id="shiba9" src="./assets/shibainu9.png"/>
+  <img id="shiba10" src="./assets/shibainu10.png"/>
+      </div>
+      <a-scene mindar-face embedded color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+        <a-assets>
+          <!-- <a-asset-item id="headModel" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.5/examples/face-tracking/assets/sparkar/headOccluder.glb"></a-asset-item>
+          <a-asset-item id="glassesModel" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.5/examples/face-tracking/assets/glasses/scene.gltf"></a-asset-item>
+          <a-asset-item id="glassesModel2" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.5/examples/face-tracking/assets/glasses2/scene.gltf"></a-asset-item>
+          <a-asset-item id="hatModel" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.5/examples/face-tracking/assets/hat/scene.gltf"></a-asset-item>
+          <a-asset-item id="hatModel2" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.5/examples/face-tracking/assets/hat2/scene.gltf"></a-asset-item>
+          <a-asset-item id="earringModel" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.5/examples/face-tracking/assets/earring/scene.gltf"></a-asset-item> -->
+
+          <a-asset-item id="shibainu1" src="./assets/shiba1/scene.gltf"></a-asset-item>
+          <a-asset-item id="shibainu2" src="./assets/shiba2/scene.gltf"></a-asset-item>
+          <a-asset-item id="shibainu3" src="./assets/shiba3/scene.gltf"></a-asset-item>
+          <a-asset-item id="shibainu4" src="./assets/shiba4/scene.gltf"></a-asset-item>
+          <a-asset-item id="shibainu5" src="./assets/shiba5/scene.gltf"></a-asset-item>
+          <a-asset-item id="shibainu6" src="./assets/shiba6/scene.gltf"></a-asset-item>
+          <a-asset-item id="shibainu7" src="./assets/shiba7/scene.gltf"></a-asset-item>
+          <a-asset-item id="shibainu8" src="./assets/shiba8/scene.gltf"></a-asset-item>
+          <a-asset-item id="shibainu9" src="./assets/shiba9/scene.gltf"></a-asset-item>
+          <a-asset-item id="shibainu10" src="./assets/shiba10/scene.gltf"></a-asset-item>
+        </a-assets>
+        <a-camera active="false" position="0 0 0"></a-camera>
+	<!-- head occluder -->
+        <!-- <a-entity mindar-face-target="anchorIndex: 168">
+	        <a-gltf-model mindar-face-occluder position="0 -0.3 0.15"rotation="0 0 0" scale="0.065 0.065 0.065" src="#headModel"></a-gltf-model>
+        </a-entity> -->
+        <a-entity mindar-face-target="anchorIndex: 10">
+	        <a-gltf-model rotation="0 0 0" position="0.05 0.05 0.15" scale="0.08 0.08 0.08" src="#shibainu1" class="shiba1-entity" visible="false"></a-gltf-model>
+        </a-entity>
+        <a-entity mindar-face-target="anchorIndex: 52">
+	        <a-gltf-model rotation="0 0 0" position="0.05 0.05 0.15" scale="0.08 0.08 0.08" src="#shibainu2" class="shiba2-entity" visible="false"></a-gltf-model>
+        </a-entity>
+        <a-entity mindar-face-target="anchorIndex: 227">
+	        <a-gltf-model rotation="0 0 0" position="0.05 0.05 0.15" scale="0.001 0.001 0.001" src="#shibainu3" class="shiba3-entity" visible="false"></a-gltf-model>
+        </a-entity>
+        <a-entity mindar-face-target="anchorIndex: 447">
+	        <a-gltf-model rotation="0 0 0" position="0.05 0.05 0.15" scale="0.001 0.001 0.001" src="#shibainu4" class="shiba4-entity" visible="false"></a-gltf-model>
+        </a-entity>
+        <a-entity mindar-face-target="anchorIndex: 195">
+	        <a-gltf-model rotation="0 0 0" position="0.05 0.05 0.15" scale="0.001 0.001 0.001" src="#shibainu5" class="shiba5-entity" visible="false"></a-gltf-model>
+        </a-entity>
+        <a-entity mindar-face-target="anchorIndex: 282">
+	        <a-gltf-model rotation="0 0 0" position="0.05 0.05 0.15" scale="0.001 0.001 0.001" src="#shibainu6" class="shiba6-entity" visible="false"></a-gltf-model>
+        </a-entity>
+        <a-entity mindar-face-target="anchorIndex: 19">
+	        <a-gltf-model rotation="0 0 0" position="0.05 0.05 0.15" scale="0.001 0.001 0.001" src="#shibainu7" class="shiba7-entity" visible="false"></a-gltf-model>
+        </a-entity>
+        <a-entity mindar-face-target="anchorIndex: 287">
+	        <a-gltf-model rotation="0 0 0" position="0.05 0.05 0.15" scale="0.001 0.001 0.001" src="#shibainu8" class="shiba8-entity" visible="false"></a-gltf-model>
+        </a-entity>
+        <a-entity mindar-face-target="anchorIndex: 57">
+	        <a-gltf-model rotation="0 0 0" position="0.05 0.05 0.15" scale="0.08 0.08 0.08" src="#shibainu9" class="shiba9-entity" visible="false"></a-gltf-model>
+        </a-entity>        
+        <a-entity mindar-face-target="anchorIndex: 152">
+	        <a-gltf-model rotation="0 0 0" position="0.05 0.05 0.15" scale="0.08 0.08 0.08" src="#shibainu10" class="shiba10-entity" visible="false"></a-gltf-model>
+        </a-entity>
+      </a-scene>
+    </div>
+  </body>
+</html>

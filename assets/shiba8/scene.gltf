@@ -3,47 +3,65 @@
     {
       "bufferView": 2,
       "componentType": 5126,
-      "count": 2547,
+      "count": 2531,
       "max": [
-        0.4604490101337433,
-        1.0053009986877441,
-        1.4105160236358643
+        46.04490280151367,
+        137.1463623046875,
+        36.42580032348633
       ],
       "min": [
-        -0.4604490101337433,
-        -0.3757419288158417,
-        -0.3642579913139343
+        -46.04490280151367,
+        -0.9579582214355469,
+        -141.05162048339844
       ],
       "type": "VEC3"
     },
     {
       "bufferView": 2,
-      "byteOffset": 30564,
+      "byteOffset": 30372,
       "componentType": 5126,
-      "count": 2547,
+      "count": 2531,
       "max": [
-        0.9990193247795105,
-        0.9989622235298157,
-        0.9998840689659119
+        0.9990193843841553,
+        0.9998117089271545,
+        1.0
       ],
       "min": [
         -0.9990193247795105,
-        -0.9998113512992859,
-        -1.0
+        -0.9989622235298157,
+        -0.9998907446861267
       ],
       "type": "VEC3"
     },
     {
-      "bufferView": 1,
+      "bufferView": 3,
       "componentType": 5126,
-      "count": 2547,
+      "count": 2531,
       "max": [
-        0.9876394867897034,
-        0.9898383617401123
+        0.9999487996101379,
+        0.9938592910766602,
+        0.9995232820510864,
+        1.0
       ],
       "min": [
-        0.011742204427719116,
-        0.011792421340942383
+        -0.9999017715454102,
+        -0.9991430640220642,
+        -0.9990723133087158,
+        -1.0
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 2531,
+      "max": [
+        0.9956455230712891,
+        0.9950350522994995
+      ],
+      "min": [
+        0.006677865982055664,
+        0.0055289119482040405
       ],
       "type": "VEC2"
     },
@@ -56,12 +74,12 @@
   ],
   "asset": {
     "extras": {
-      "author": "Peixe do Blender (https://sketchfab.com/PeixedoBlender)",
+      "author": "katrin.kor (https://sketchfab.com/katrin.701)",
       "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
-      "source": "https://sketchfab.com/3d-models/bodyguard-shiba-7ebaaf4347034c35a7a5aa83919c2ca3",
-      "title": "Bodyguard Shiba"
+      "source": "https://sketchfab.com/3d-models/shiba-toy-785d59e9a1cc4f369eb6684ff7dcc19d",
+      "title": "shiba toy"
     },
-    "generator": "Sketchfab-12.68.0",
+    "generator": "Sketchfab-15.83.0",
     "version": "2.0"
   },
   "bufferViews": [
@@ -73,7 +91,7 @@
     },
     {
       "buffer": 0,
-      "byteLength": 20376,
+      "byteLength": 20248,
       "byteOffset": 51792,
       "byteStride": 8,
       "name": "floatBufferViews",
@@ -81,52 +99,81 @@
     },
     {
       "buffer": 0,
-      "byteLength": 61128,
-      "byteOffset": 72168,
+      "byteLength": 60744,
+      "byteOffset": 72040,
       "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 40496,
+      "byteOffset": 132784,
+      "byteStride": 16,
       "name": "floatBufferViews",
       "target": 34962
     }
   ],
   "buffers": [
     {
-      "byteLength": 133296,
+      "byteLength": 173280,
       "uri": "scene.bin"
     }
   ],
   "extensionsUsed": [
-    "KHR_materials_unlit"
+    "KHR_materials_specular"
   ],
   "images": [
     {
-      "uri": "textures/default.001_baseColor.png"
+      "uri": "textures/Shiba_baseColor.png"
+    },
+    {
+      "uri": "textures/Shiba_metallicRoughness.png"
+    },
+    {
+      "uri": "textures/Shiba_normal.png"
     }
   ],
   "materials": [
     {
+      "doubleSided": true,
       "extensions": {
-        "KHR_materials_unlit": {}
+        "KHR_materials_specular": {
+          "specularColorFactor": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "specularFactor": 0.0
+        }
       },
-      "name": "default.001",
+      "name": "Shiba",
+      "normalTexture": {
+        "index": 2
+      },
       "pbrMetallicRoughness": {
         "baseColorTexture": {
           "index": 0
         },
-        "metallicFactor": 0.0
+        "metallicFactor": 0.0,
+        "metallicRoughnessTexture": {
+          "index": 1
+        }
       }
     }
   ],
   "meshes": [
     {
-      "name": "Group18985_default_0_default.001_0",
+      "name": "Shiba_Shiba_0",
       "primitives": [
         {
           "attributes": {
             "NORMAL": 1,
             "POSITION": 0,
-            "TEXCOORD_0": 2
+            "TANGENT": 2,
+            "TEXCOORD_0": 3
           },
-          "indices": 3,
+          "indices": 4,
           "material": 0,
           "mode": 4
         }
@@ -144,16 +191,16 @@
         0.0,
         0.0,
         0.0,
-        3.828568672208042e-16,
+        2.220446049250313e-16,
         -1.0,
         0.0,
         0.0,
         1.0,
-        3.828568672208042e-16,
+        2.220446049250313e-16,
         0.0,
         0.0,
-        2.0488253085204633e-06,
-        -5.450155526887097e-07,
+        0.0,
+        0.0,
         1.0
       ],
       "name": "Sketchfab_model"
@@ -180,7 +227,7 @@
         0.0,
         1.0
       ],
-      "name": "9e2ec42717a9481b96b645537dabee06.fbx"
+      "name": "cf7ac452194e494590b44d0e0032a434.fbx"
     },
     {
       "children": [
@@ -192,131 +239,11 @@
       "children": [
         4
       ],
-      "matrix": [
-        100.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        -100.00001525878795,
-        1.5099582213796756e-05,
-        0.0,
-        0.0,
-        -1.5099582213796756e-05,
-        -100.00001525878795,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        1.0
-      ],
-      "name": "RootNode (gltf orientation matrix)"
-    },
-    {
-      "children": [
-        5
-      ],
-      "name": "RootNode (model correction matrix)"
-    },
-    {
-      "children": [
-        6
-      ],
-      "matrix": [
-        1.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        -1.6292069881348986e-07,
-        1.0000001192092762,
-        0.0,
-        0.0,
-        -1.0000001192092762,
-        -1.6292069881348986e-07,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        1.0
-      ],
-      "name": "1.FBX"
-    },
-    {
-      "children": [
-        7
-      ],
-      "matrix": [
-        1.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        1.0,
-        -1.6543612251060557e-24,
-        0.0,
-        0.0,
-        1.6543612251060557e-24,
-        1.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        1.0
-      ],
-      "name": "RootNode"
-    },
-    {
-      "children": [
-        8
-      ],
-      "matrix": [
-        1.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        -1.6292069881348986e-07,
-        -1.0000001192092762,
-        0.0,
-        0.0,
-        1.0000001192092762,
-        -1.6292069881348986e-07,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        1.0
-      ],
-      "name": "Group18985"
-    },
-    {
-      "children": [
-        9
-      ],
-      "matrix": [
-        1.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        1.0,
-        -1.4210854715202e-14,
-        0.0,
-        0.0,
-        1.4210854715202e-14,
-        1.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        1.0
-      ],
-      "name": "Group18985_default_0"
+      "name": "Shiba"
     },
     {
       "mesh": 0,
-      "name": "Group18985_default_0_default.001_0"
+      "name": "Shiba_Shiba_0"
     }
   ],
   "samplers": [
@@ -340,6 +267,14 @@
     {
       "sampler": 0,
       "source": 0
+    },
+    {
+      "sampler": 0,
+      "source": 1
+    },
+    {
+      "sampler": 0,
+      "source": 2
     }
   ]
 }
