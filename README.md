@@ -12,7 +12,7 @@ scan the QR code and go to application :
 
 
 # **VIDEO**
-Click this link and enjoy the video :
+Click this link and enjoy the video : https://youtu.be/QeTLlG_OUrY?si=4VdsAm906ST6H8RB 
 
 
 # **DOCUMENTATION**
